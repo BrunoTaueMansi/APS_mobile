@@ -1,6 +1,7 @@
-import 'package:aps/Screens/Appointment/Appointment_screen.dart';
+import 'package:aps/Screens/Result/result_screen.dart';
 import 'package:aps/components/Commun/background.dart';
 import 'package:aps/components/Commun/rounded_button.dart';
+import 'package:aps/components/Commun/rounded_input_field.dart';
 import 'package:flutter/material.dart';
 
 class Body extends StatelessWidget {
@@ -15,29 +16,32 @@ class Body extends StatelessWidget {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
-          Text(
-            "Olá!",
-            style: TextStyle(
-              fontWeight: FontWeight.bold,
-              fontSize: 25
-            ),
-          ),
+          Text("Como você esta se sentindo hoje?\nResponda as perguntas abaixo"),
           SizedBox(height: size.height * 0.05),
-          Text(
-            "      Bem vindo ao Consultapp, no nosso aplicativo\n você poderá consultar rapidamente a cauda para\n o seu mau estar. Basta clicar no botão abaixo para\n começar a sua consulta!",
-            style: TextStyle(
-              fontSize: 15
-            ),
+          Text("Está sentindo náusea?"),
+          RoundedInputField(
+            icon: null,
           ),
-          SizedBox(height: size.height * 0.05),
+          Text("Está com congestão nasal?"),
+          RoundedInputField(
+            icon: null,
+          ),
+          Text("Está com tosse?"),
+          RoundedInputField(
+            icon: null,
+          ),
+          Text("Está com dor? Se sim, aonde?"),
+          RoundedInputField(
+            icon: null,
+          ),
           RoundedButton(
-            text: "Consultar",
+            text: "Confirmar",
             press: () {
               Navigator.push(
                 context,
                 MaterialPageRoute(
                   builder: (context){
-                    return AppointmentScreen();
+                    return ResultScreen();
                   }
                 )
               );
